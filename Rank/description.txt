@@ -1,0 +1,13 @@
+There is a web graph. The graph's vertices are some pages. 
+The edge that connects the ith vertex to the jth one means that from the i-th page one can go to j.
+There are "importance pages." At the beginning, the importance of each page is 1 / n; n is the number of pages (vertices of the graph).
+A matrix M is constructed:
+If there is a path from the jth vertex to the i-th vertex, then the element a [i] [j] equals 1 / the number of paths from the ith vertex.
+Otherwise, a [i] [j] = 0
+
+The vector x is a vector of "importance of pages".
+x [0] - all components are equal to 1 / n
+The task: to find the vector x on the n-th iteration.
+x [1] = M * x [0]
+x [2] = M * x [1]
+x [n] = M * x [n-1]
